@@ -1,5 +1,5 @@
 import streamlit as st
-import functions
+from functions import file_downloader
 import pandas as pd
 
 # Title
@@ -16,7 +16,9 @@ st.markdown(
     """
 )
 
-# Dataframe for example
+### Dataframe for example ###
+
+# Create data
 data = {
     'Menu Category': ['Burgers'],
     'Item Name': ['Classic Burger'],
@@ -25,6 +27,11 @@ data = {
     'Number Sold': ['750']
 }
 
+# Create dataframe
 df = pd.DataFrame(data)
 
+# Display dataframe on page
 st.dataframe(df, hide_index=True, use_container_width=True)
+
+### File downloader ###
+file_downloader()

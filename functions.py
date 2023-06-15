@@ -48,8 +48,9 @@ def file_downloader():
 
 ### File uploader function ###
 def file_uploader():
-    uploaded_file = st.file_uploader('Choose a file', label_visibility='hidden')
+    uploaded_file = st.file_uploader('Choose a file', label_visibility='hidden', )
     if uploaded_file is not None:
         # Can be used wherever a "file-like" object is accepted:
-        df = pd.read_excel(uploaded_file)
-        return st.dataframe(df, hide_index=True)
+        return pd.read_excel(uploaded_file)
+        # return df
+        # return st.dataframe(df, hide_index=True, use_container_width=True)
