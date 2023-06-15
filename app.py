@@ -1,15 +1,27 @@
 # import libraries
 import streamlit as st
 import pandas as pd
+from file_functions import file_downloader, file_uploader
 
 # app title
 st.title('Welcome to Menuphi!')
 
-# load data
-df = pd.read_excel('data/menu_data.xlsx')
+st.markdown(
+    """
+        Kickstart your menu management journey with the ***Menuphi Custom Template***,
+        your go-to tool for meticulously capturing crucial details about
+        each and every mouthwatering item on your menu.
+    """
+    )
 
-# format dataframe
-format_dict = {'Cost': '${:.2f}', 'Price': '${:.2f}', 'Contribution Margin': '${:.2f}'}
+file_downloader()
 
-# display dataframe
-st.dataframe(df.style.format(format_dict), hide_index=True)
+st.markdown(
+    """
+    With the data on your menu items fully inputted, upload the
+    template to Menuphi to unlock valuable insights through our ***Menu Engineering Analysis***.
+    """
+)
+
+df = file_uploader()
+st.dataframe(df)
