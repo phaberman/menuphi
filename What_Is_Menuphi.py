@@ -1,10 +1,15 @@
 # import libraries
 import streamlit as st
+from functions import page_configs
 
-st.set_page_config(layout='wide')
+# Page configurations
+page_configs()
+# st.set_page_config(layout='wide')
 
 # Title
 st.title('Welcome to Menuphi!')
+
+st.divider()
 
 # Introduction
 st.markdown(
@@ -32,9 +37,8 @@ st.markdown(
 st.markdown(
     """
     ### To get started, follow our easy 3-step process:\n
-    1. Download the menu data template.\n
-    2. Fill it out with your menu item data.\n
+    1. Download the menu data template.
+    2. Fill it out with your menu item data.
     3. Upload the file and let **Menuphi** do the rest!
     """
-
 )

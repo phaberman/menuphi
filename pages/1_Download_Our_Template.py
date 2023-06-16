@@ -5,6 +5,8 @@ import pandas as pd
 # Title
 st.title('Step 1: Download Our Template')
 
+st.divider()
+
 # Introduction
 st.markdown(
     """
@@ -32,6 +34,19 @@ df = pd.DataFrame(data)
 
 # Display dataframe on page
 st.dataframe(df, hide_index=True, use_container_width=True)
+
+# Some tips and reminders
+st.markdown(
+    """
+    ### Here are a few tips and reminders as you fill in the template.\n
+    1. Use the same time period for each item when recording the number
+    of items sold.
+    2. Include the cost of *each and every* ingredient used to prepare an item,
+    including things like fryer oil, condiments, and garnishes.
+    3. If ingredient costs or item prices changed during the time
+    period you're analyzing, then use the most recent cost/price.
+    """
+)
 
 ### File downloader ###
 file_downloader()
