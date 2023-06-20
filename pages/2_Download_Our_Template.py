@@ -3,7 +3,7 @@ from functions import file_downloader
 import pandas as pd
 
 # Title
-st.title('Step 1: Download Our Template')
+st.title('Download Our Template')
 
 st.divider()
 

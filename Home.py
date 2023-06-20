@@ -14,15 +14,14 @@ st.divider()
 # Introduction
 st.markdown(
     """
-    **Menuphi** was built with one goal in mind:
-    lowering your costs and maximizing profits
+    Our goal is to lower your costs and maximize your profits
     through strategic menu engineering and data-driven insights.
     """
 )
 
 st.markdown(
     """
-    Let **Menuphi** revolutionize your restaurant's success,
+    Revolutionize your restaurant's success,
     taking the burden of menu analysis off your hands.
     """
     )

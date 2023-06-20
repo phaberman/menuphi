@@ -74,6 +74,39 @@ def file_uploader():
 
         return df
 
+
+### TO DATAFRAME
+def load_data(uploaded_file):
+    df = pd.read_excel(uploaded_file)
+
+    # Add a'Contribution Margin' Column
+    df['Contribution Margin'] = df['Menu Price'] - df['Cost']
+
+    # Calculate the mean of 'contribution margin' column
+    contribution_mean = df['Contribution Margin'].mean()
+
+    # Calculate the mean of 'number sold' column
+    sold_mean = df['Number Sold'].mean()
+
+    # Create a function to apply the conditions and assign the appropriate category
+    def assign_category(row):
+        if row['Contribution Margin'] >= contribution_mean and row['Number Sold'] >= sold_mean:
+            return 'Star'
+        elif row['Contribution Margin'] < contribution_mean and row['Number Sold'] >= sold_mean:
+            return 'Plow-Horse'
+        elif row['Contribution Margin'] >= contribution_mean and row['Number Sold'] < sold_mean:
+            return 'Puzzle'
+        else:
+            return 'Dog'
+
+    # Apply the function to create the 'Category' column
+    df['Category'] = df.apply(assign_category, axis=1)
+
+    return df
+
+
+
+
 ### Ploty Scatter Plot ###
 
 import plotly.express as px
