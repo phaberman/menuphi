@@ -10,11 +10,11 @@ st.divider()
 # Introduction
 st.markdown(
     """
-    To get started, download the **Menu Data Template**
+    To get started, download the *Menu Data Template*
     and fill it out with your menu item data.
     Each row represents one menu item, so if your menu contains 10 items,
     there should be 10 rows (excluding the column headers).\n
-    Here is an example of what the first row should look like:
+    Here is an example of what the first row might look like:
     """
 )
 
@@ -38,7 +38,7 @@ st.dataframe(df, hide_index=True, use_container_width=True)
 # Some tips and reminders
 st.markdown(
     """
-    ### Here are a few tips and reminders as you fill in the template.\n
+    ### Here are a few tips as you fill in the template.\n
     1. Use the same time period for each item when recording the number
     of items sold.
     2. Include the cost of *each and every* ingredient used to prepare an item,

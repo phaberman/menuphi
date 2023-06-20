@@ -8,7 +8,6 @@ import pandas as pd
 # for plotly chart
 import plotly.express as px
 
-
 ### Page configurations ###
 def page_configs():
     st.set_page_config(layout='wide')
@@ -191,3 +190,5 @@ def plot_menu(df, profit_col, popularity_col):
 
     # Show the plot
     return fig
+
+### TABLE PLOT
