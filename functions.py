@@ -1,4 +1,4 @@
-# Libraries
+### LIBRARIES
 # for file downloader
 import streamlit as st
 import xlsxwriter
@@ -8,11 +8,11 @@ import pandas as pd
 # for plotly chart
 import plotly.express as px
 
-### Page configurations ###
+### PAGE CONFIGURATIONS
 def page_configs():
     st.set_page_config(layout='wide')
 
-### File downloader function ###
+### FILE DOWNLOADEDER
 def file_downloader():
     output = BytesIO()
 
@@ -41,7 +41,7 @@ def file_downloader():
         mime='application/vnd.ms-excel'
     )
 
-### File uploader function ###
+### FILE UPLOADER
 def file_uploader():
     uploaded_file = st.file_uploader('Choose a file', type='xlsx', label_visibility='hidden', )
     if uploaded_file is not None:
@@ -73,8 +73,7 @@ def file_uploader():
 
         return df
 
-
-### TO DATAFRAME
+### CONVERT UPLOADED FILE TO DATAFRAME AND TRANSFORM
 def load_data(uploaded_file):
     df = pd.read_excel(uploaded_file)
 
@@ -100,16 +99,9 @@ def load_data(uploaded_file):
 
     # Apply the function to create the 'Category' column
     df['Category'] = df.apply(assign_category, axis=1)
-
     return df
 
-
-
-
-### Ploty Scatter Plot ###
-
-import plotly.express as px
-
+### SCATTERPLOT
 def plot_menu(df, profit_col, popularity_col):
     profitability_threshold = df[profit_col].mean()
     popularity_threshold = df[popularity_col].mean()
@@ -191,4 +183,29 @@ def plot_menu(df, profit_col, popularity_col):
     # Show the plot
     return fig
 
-### TABLE PLOT
+### Recommendations list
+def recs(stars, plow_horses, puzzles, dogs):
+    if len(stars) == 1:
+        st.markdown(f"1. Promote your *{', '.join(stars)}* and highlight it in your menu design.")
+    elif len(stars) > 1:
+        st.markdown(f"1. Promote your *{', '.join(stars[:-1])}* and *{', '.join(stars[-1:])}* and highlight them in you menu design.")
+    else:
+        st.markdown("There are no stars on your menu.")
+    if len(plow_horses) == 1:
+        st.markdown(f"2. Pair your *{', '.join(plow_horses)}* with high margin items or carefully alter the recipe to lower costs and increase margins.")
+    elif len(plow_horses) > 1:
+        st.markdown(f"2. Pair your *{', '.join(plow_horses[:-1])}* and *{', '.join(plow_horses[-1:])}* with high margin items and/or carefully alter the recipes to lower costs and increase margins.")
+    else:
+        st.markdown("There are no plow-horses on your menu.")
+    if len(puzzles) == 1:
+        st.markdown(f"3. Improve the menu description and placement of *{', '.join(puzzles)}* and have your staff recommend it to your customers.")
+    elif len(puzzles) > 1:
+        st.markdown(f"3. Improve the menu description and placement of *{', '.join(puzzles[:-1])}* and *{', '.join(puzzles[-1:])}* and have your staff recommend them to your customers.")
+    else:
+        st.markdown("There are no puzzles on your menu.")
+    if len(dogs) == 1:
+        st.markdown(f"4. Reinvent or rebrand your *{', '.join(dogs)}* or remove it from the menu altogether.")
+    elif len(dogs) > 1:
+        st.markdown(f"4. Reinvent or rebrand your *{', '.join(dogs[:-1])}* and *{', '.join(dogs[-1:])}* or remove them from the menu altogether.")
+    else:
+        st.markdown("There are no dogs on your menu.")
