@@ -68,9 +68,29 @@ with tab3:
             st.markdown(f"*{', '.join(dogs)}*")
 
 with tab4:
-    st.markdown("Here are several recommendations based on the analysis of your menu items")
+    st.markdown("Here are several recommendations based on our analysis of your menu items.")
     if uploaded_file is not None:
-        st.markdown(f"1. Promote your *{', '.join(stars[:-1])}* and *{', '.join(stars[-1:])}* and highlight them in you menu design.")
-        st.markdown(f"2. Pair your *{', '.join(plow_horses[:-1])}* and *{', '.join(plow_horses[-1:])}* with high margin items and/or carefully alter the recipe to lower costs/increase contribution margin.")
-        st.markdown(f"3. Improve the menu description and placement of *{', '.join(puzzles[:-1])}* and *{', '.join(puzzles[-1:])}* and have your staff recommend them to you customers.")
-        st.markdown(f"4. Reinvent or rebrand your *{', '.join(dogs[:-1])}* and *{', '.join(dogs[-1:])}* or remove them from the menu altogether.")
+        if len(stars) == 1:
+            st.markdown(f"1. Promote your *{', '.join(stars)}* and highlight it in your menu design.")
+        elif len(stars) > 1:
+            st.markdown(f"1. Promote your *{', '.join(stars[:-1])}* and *{', '.join(stars[-1:])}* and highlight them in you menu design.")
+        else:
+            st.markdown("There are no stars on your menu.")
+        if len(plow_horses) == 1:
+            st.markdown(f"2. Pair your *{', '.join(plow_horses)}* with high margin items or carefully alter the recipe to lower costs and increase margins.")
+        elif len(plow_horses) > 1:
+            st.markdown(f"2. Pair your *{', '.join(plow_horses[:-1])}* and *{', '.join(plow_horses[-1:])}* with high margin items and/or carefully alter the recipes to lower costs and increase margins.")
+        else:
+            st.markdown("There are no plow-horses on your menu.")
+        if len(puzzles) == 1:
+            st.markdown(f"3. Improve the menu description and placement of *{', '.join(puzzles)}* and have your staff recommend it to your customers.")
+        elif len(puzzles) > 1:
+            st.markdown(f"3. Improve the menu description and placement of *{', '.join(puzzles[:-1])}* and *{', '.join(puzzles[-1:])}* and have your staff recommend them to your customers.")
+        else:
+            st.markdown("There are no puzzles on your menu.")
+        if len(dogs) == 1:
+            st.markdown(f"4. Reinvent or rebrand your *{', '.join(dogs)}* or remove it from the menu altogether.")
+        elif len(dogs) > 1:
+            st.markdown(f"4. Reinvent or rebrand your *{', '.join(dogs[:-1])}* and *{', '.join(dogs[-1:])}* or remove them from the menu altogether.")
+        else:
+            st.markdown("There are no dogs on your menu.")
