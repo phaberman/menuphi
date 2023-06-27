@@ -11,25 +11,15 @@ Menuphi is an app designed to help restaurant owners and managers reduce costs a
 - Time-saving: By automating the menu analysis process, Menuphi saves restaurant owners valuable time that would otherwise be spent manually crunching numbers and analyzing data. This allows them to focus more on running their restaurant, enhancing customer experience, and making strategic decisions.
 
 ## Getting Started
+
 To get started with Menuphi, follow these steps:
 
-1. Clone the repository to your local machine.
+1. Clone the repository:
 
-bash
-Copy code
-git clone https://github.com/your-username/menuphi.git
-Install the required dependencies.
+    git clone https://github.com/your-username/your-repo.git
 
-Copy code
-npm install
-Open the Menuphi template file (menuphi_template.csv) in a spreadsheet application such as Microsoft Excel or Google Sheets.
+2. Customize the Menuphi template according to your restaurant's menu item data.
 
-Fill out the template with your menu item data, including the item name, cost, price, popularity, and any other relevant metrics.
+3. Upload the filled-out Menuphi template to the Menuphi app.
 
-Save the filled-out template as a CSV file (menu_data.csv).
-
-Upload the menu_data.csv file to Menuphi using the web interface or API endpoints.
-
-Wait for Menuphi to process the data and generate the analysis and recommendations.
-
-Access the results through the Menuphi web interface or retrieve them programmatically using the provided API endpoints.
+4. Receive a comprehensive analysis and recommendations for your menu items.
