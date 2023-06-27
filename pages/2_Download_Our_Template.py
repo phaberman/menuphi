@@ -1,4 +1,4 @@
-# import streamlit as st
+import streamlit as st
 from functions import file_downloader
 import pandas as pd
 
@@ -10,8 +10,8 @@ st.divider()
 # Introduction
 st.markdown(
     """
-    Start by downloading the *Menu Data Template*
-    and filling it out with your menu item data.\n
+    Download the *Menu Data Template*
+    and fill it out with your menu item data to get started.\n
     Here is an example of what the first row might look like:
     """
 )

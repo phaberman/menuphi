@@ -34,7 +34,7 @@ with tab1:
 
 # Analysis
 with tab2:
-    st.markdown("**Menuphi's** analysis has categorized each of your menu items into one of these four categories.")
+    st.markdown("**Menuphi** has categorized each of your menu items into one of these four categories.")
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         st.markdown('#### Stars')

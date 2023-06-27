@@ -4,7 +4,19 @@ from functions import page_configs
 
 # Page configurations
 page_configs()
-# st.set_page_config(layout='wide')
+
+# Customer quotes on the side bar
+st.sidebar.markdown(
+    """
+    ## Customer Reviews
+    *Menuphi's quick analysis has been a game-changer for us!* - Tom, CEO of The Burger Barn
+    \n
+    *Thanks to Menuphi, we now have a data-driven menu strategy that's driving customer satisfaction.* - Alex, General Manager of The Olive Tree
+    \n
+    *Menuphi simplified our menu analysis and saved us valuable time and resources.* - Lisa, Restaurant Owner of The Spice House
+    """
+    )
+
 
 # Title
 st.markdown('# Menuphi')
