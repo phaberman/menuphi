@@ -1,5 +1,5 @@
 import streamlit as st
-from functions import *
+from functions import load_data, plot_menu, recs
 import pandas as pd
 from pathlib import Path
 import os
