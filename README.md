@@ -15,9 +15,9 @@ Menuphi is an app designed to help restaurant owners and managers reduce costs a
 To get started with Menuphi, follow these steps:
 
 1. Clone the repository:
-    '''
-    git clone https://github.com/your-username/your-repo.git
-    '''
+```
+git clone https://github.com/your-username/your-repo.git
+```
 
 2. Customize the Menuphi template according to your restaurant's menu item data.
 
