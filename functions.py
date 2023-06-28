@@ -12,6 +12,7 @@ import plotly.express as px
 def page_configs():
     st.set_page_config(layout='wide')
 
+
 ### FILE DOWNLOADEDER
 def file_downloader():
     output = BytesIO()

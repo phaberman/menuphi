@@ -17,11 +17,9 @@ st.sidebar.markdown(
     """
     )
 
-
 # Title
-st.markdown('# Menuphi')
+st.title('Menuphi')
 st.markdown('###### *Menu Analysis Made Easy*')
-
 
 st.divider()
 
