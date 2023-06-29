@@ -36,7 +36,7 @@ def file_downloader():
 
     # Download button
     return st.download_button(
-        label='Click to Download',
+        label='Download Template',
         data=output.getvalue(),
         file_name='menu_data_template.xlsx',
         mime='application/vnd.ms-excel'
@@ -210,3 +210,49 @@ def recs(stars, plow_horses, puzzles, dogs):
         st.markdown(f"4. Reinvent or rebrand your *{', '.join(dogs[:-1])}* and *{', '.join(dogs[-1:])}* or remove them from the menu altogether.")
     else:
         st.markdown("There are no dogs on your menu.")
+
+### Download sample dataset
+def download_sample_data():
+    output = BytesIO()
+
+    # Write files to in-memory strings using BytesIO
+    workbook = xlsxwriter.Workbook(output, {'in_memory': True})
+    worksheet = workbook.add_worksheet()
+
+    # Define the column headers
+    headers = ['Menu Category', 'Item Name', 'Menu Price', 'Cost', 'Number Sold']
+
+    # Define a format for bold headers
+    bold_format = workbook.add_format({'bold': True})
+
+    # Write the column headers to the worksheet in bold
+    for col, header in enumerate(headers):
+        worksheet.write(0, col, header, bold_format)
+
+    # Define sample data rows
+    data = [
+        ['Side', 'Mozzarella Sticks', 3.00, 1.71, 22],
+        ['Sandwich', 'BLT Sandwich', 5.00, 2.03, 16],
+        ['Side', 'French Fries', 3.00, 1.32, 42],
+        ['Burger', 'Jalapeno Burger', 7.00, 1.57, 45],
+        ['Pasta', 'Penne Arrabiata', 14.00, 2.60, 22],
+        ['Pizza', 'Supreme Pizza', 13.00, 1.77, 23],
+        ['Pasta', 'Lasagna', 11.00, 2.73, 36],
+        ['Pizza', 'BBQ Chicken Pizza', 11.00, 2.00, 32]
+    ]
+
+    # Write the data rows to the worksheet
+    for row, row_data in enumerate(data, start=1):
+        for col, value in enumerate(row_data):
+            worksheet.write(row, col, value)
+
+    # Close and save the workbook
+    workbook.close()
+
+    # Download button
+    return st.download_button(
+        label='Download Sample Data',
+        data=output.getvalue(),
+        file_name='sample_data.xlsx',
+        mime='application/vnd.ms-excel'
+    )

@@ -1,5 +1,5 @@
 import streamlit as st
-from functions import file_downloader
+from functions import file_downloader, download_sample_data
 import pandas as pd
 
 # Title
@@ -43,8 +43,15 @@ st.markdown(
     including things like fryer oil, condiments, and garnishes.
     - If ingredient costs or item prices changed during the time
     period you're analyzing, then use the most recent cost/price.
+    - Save it as an .xlsx file.
     """
 )
 
-### File downloader ###
+### File downloaders ###
+
+# blank template
 file_downloader()
+
+# sample data
+st.markdown('Alternatively, try it with sample data first.')
+download_sample_data()
