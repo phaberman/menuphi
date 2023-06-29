@@ -1,8 +1,6 @@
 streamlit
 pandas
 Path
-# os
 xlsxwriter
-# io
 plotly
 openpyxl
