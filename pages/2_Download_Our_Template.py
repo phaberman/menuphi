@@ -1,5 +1,5 @@
 import streamlit as st
-from functions import file_downloader, download_sample_data
+from functions import *
 import pandas as pd
 
 # Title
